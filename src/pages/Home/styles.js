@@ -59,6 +59,7 @@ export const BannerTextContainer = styled.div`
   h2 {
     color: ${colors.primaryText};
     margin-bottom: 10px;
+    font-size: 19px;
   }
   a {
     flex: 1;
@@ -96,7 +97,6 @@ export const TopicContainer = styled.div`
   display: flex;
   flex-basis: 100%;
   max-width: 600px;
-  min-width: 500px;
   flex-grow: 1;
   margin: 2px 5px;
   justify-content: space-between;
@@ -112,18 +112,15 @@ export const TopicContainer = styled.div`
   a {
     text-decoration: none;
   }
-  img {
-    width: 44px;
-  }
 
   button {
     flex: 1;
-    padding: 15px;
     border: none;
     cursor: pointer;
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 50px;
+    max-width: 50px;
     img {
+      width: 35px;
       transition-duration: 500ms;
     }
     img:hover{
@@ -158,6 +155,7 @@ export const TopicTexts = styled.div`
     color: ${colors.primaryText};
     flex-wrap: wrap;
     margin-bottom: 7px;
+    font-size: 22px;
     transition-duration: 500ms;
     font-family: 'Source Sans Pro', sans-serif;
 

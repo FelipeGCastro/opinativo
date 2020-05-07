@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import {
-  // Container,
   ModalCollection,
   CloseModalButton,
   CollectionContainer
@@ -11,7 +10,6 @@ function CollectionModal ({ visible, topic, setVisible }) {
   const [link, setLink] = useState('')
   useEffect(() => {
     const linkExtracted = (topic.split('href="')[1] || '').split('"')[0]
-    console.log(linkExtracted)
     setLink(linkExtracted)
     visible && window.twttr.widgets.load(document.getElementById('twitterModal'))
   }, [topic, visible])
