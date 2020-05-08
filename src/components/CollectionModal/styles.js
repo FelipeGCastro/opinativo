@@ -1,5 +1,15 @@
 import styled from 'styled-components'
 
+export const RestScreen = styled.div`
+  display: ${props => props.visible ? 'flex' : 'none'};
+  flex-grow: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+`
 export const ModalCollection = styled.div`
   display: flex;
   overflow-x: hidden;
@@ -47,7 +57,5 @@ export const CollectionContainer = styled.div`
   display: flex;
   flex: 1;
   padding-top: 15px;
-  justify-content: center;
-  align-items: center;
   overflow: scroll;
 `

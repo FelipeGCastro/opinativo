@@ -55,7 +55,7 @@ function Home () {
 
   const handleItemPress = useCallback((collection) => {
     setTopicModal(collection)
-    !visible && setVisibility()
+    setVisibility()
   }, [setVisibility])
 
   return (

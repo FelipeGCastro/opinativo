@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import {
+  RestScreen,
   ModalCollection,
   CloseModalButton,
   CollectionContainer
@@ -19,15 +20,18 @@ function CollectionModal ({ visible, topic, setVisible }) {
     setVisible()
   }
   return (
-    <ModalCollection id='twitterModal' visible={visible}>
-      <CloseModalButton onClick={handleCloseModal}>Fechar</CloseModalButton>
-      {link && (
-        <CollectionContainer>
-          <a className='twitter-timeline' href={link}>Curated Tweets by @OpinativoOficial</a>
-        </CollectionContainer>
-      )}
+    <>
+      <RestScreen onClick={handleCloseModal} visible={visible} />
+      <ModalCollection id='twitterModal' visible={visible}>
+        <CloseModalButton onClick={handleCloseModal}>Fechar</CloseModalButton>
+        {link && (
+          <CollectionContainer>
+            <a className='twitter-timeline' href={link}>Curated Tweets by @OpinativoOficial</a>
+          </CollectionContainer>
+        )}
 
-    </ModalCollection>
+      </ModalCollection>
+    </>
   )
 }
 
