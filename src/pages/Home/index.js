@@ -46,7 +46,7 @@ function Home () {
           }
         }
         const arrayTopics = Object.keys(topics).map(key => topics[key])
-        setTopics(arrayTopics)
+        setTopics(arrayTopics.reverse())
       }
     } catch (error) {
       console.log(error)
