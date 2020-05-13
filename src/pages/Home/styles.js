@@ -97,6 +97,7 @@ export const ContentContainer = styled.div`
 export const TopicContainer = styled.div`
   display: flex;
   flex-basis: 100%;
+  flex-wrap: ${props => props.width < 450 ? 'wrap' : 'nowrap'};
   max-width: 800px;
   flex-grow: 1;
   margin: 5px auto;
@@ -152,7 +153,7 @@ export const MainContent = styled.div`
 `
 export const TopicContent = styled.div`
   display: flex;
-  flex: 1;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: stretch;
   padding: 10px;
@@ -191,7 +192,7 @@ export const TopicTexts = styled.div`
 `
 export const TopicFooter = styled.div`
   display: flex;
-  flex: 1;
+  flex-shrink: 1;
   flex-wrap: wrap;
   div {
     flex-wrap: wrap;

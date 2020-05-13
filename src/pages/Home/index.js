@@ -28,11 +28,25 @@ function Home () {
   const [topic, setTopicModal] = useState('')
   const { visible, setVisibility } = useModal()
   const [tweetWidth, setTweetWidth] = useState(350)
+  const [width, setWidth] = useState(null)
   const { updateLinks } = useContext(LinksContext)
 
   useEffect(() => {
     getLinksAndSeparateByTopics()
-    setTweetWidth(getWidth() < 600 ? 200 : 350)
+    setTweetWidth(getWidth() < 600 ? getWidth() < 450 ? getWidth() : 200 : 350)
+    setWidth(getWidth())
+    const resizeListener = () => {
+      // change width from the state object
+      setWidth(getWidth())
+    }
+    // set resize listener
+    window.addEventListener('resize', resizeListener)
+
+    // clean up function
+    return () => {
+      // remove resize listener
+      window.removeEventListener('resize', resizeListener)
+    }
   }, [])
 
   const getWidth = () => window.innerWidth ||
@@ -97,7 +111,7 @@ function Home () {
       </BannerContainer>
       <ContentContainer>
         {topics.map(topic => (
-          <TopicContainer key={topic.id}>
+          <TopicContainer width={width} key={topic.id}>
             <MainContent>
               <Link to={`/topic/${topic.id}`}>
                 <TopicContent>
