@@ -90,41 +90,53 @@ export const ContentContainer = styled.div`
   display: flex;
   flex: 1;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
 `
 export const TopicContainer = styled.div`
   display: flex;
   flex-basis: 100%;
-  max-width: 600px;
+  max-width: 800px;
   flex-grow: 1;
-  margin: 2px 5px;
+  margin: 5px auto;
+  align-self: stretch;
   justify-content: space-between;
   background-color: ${colors.cardColor};
   -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.11);
   -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.11);
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.11);
-
-  @media (min-width: 768px) {
-    min-width: 40%;
-  }
+  width: 100%;
 
   a {
     text-decoration: none;
   }
 
   button {
+    display: flex;
     flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 18px;
     border: none;
     cursor: pointer;
-    min-width: 50px;
-    max-width: 50px;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 50px;
+    max-height: 50px;
+    border-radius: 4px;
+    margin: 5px;
+    color: #fff;
     img {
-      width: 35px;
+      width: 25px;
       transition-duration: 500ms;
     }
     img:hover{
-      transform: translateY(-10px);
+      transform: translateY(-7px);
+    }
+    p { transition-duration: 500ms; }
+    p:hover {
+      transform: translateY(-7px);
     }
     background-color: ${colors.colorIcon};
     -webkit-box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.21);
@@ -132,6 +144,11 @@ export const TopicContainer = styled.div`
     box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.21);
   }
 
+`
+export const MainContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `
 export const TopicContent = styled.div`
   display: flex;
@@ -155,7 +172,7 @@ export const TopicTexts = styled.div`
     color: ${colors.primaryText};
     flex-wrap: wrap;
     margin-bottom: 7px;
-    font-size: 22px;
+    font-size: 21px;
     transition-duration: 500ms;
     font-family: 'Source Sans Pro', sans-serif;
 
@@ -164,9 +181,10 @@ export const TopicTexts = styled.div`
     }
   }
   p {
+    font-size: 14px;
     flex-wrap: wrap;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     color: ${colors.primaryText};
   }
 
@@ -184,4 +202,7 @@ export const TopicFooter = styled.div`
     border-radius: 4px;
     margin-right: 10px;
   }
+`
+export const TweetContainer = styled.div`
+  display: flex;
 `
